@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>assignment</title>
+        <style>
+            body{
+                background-color: blue;
+            }
+            .div1,.div2,.div0{
+                height: 100vh;
+            }
+            .div0{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 150px;
+                font-family: Arial;
+                color: white;
+            }
+            .div1{
+                position: relative;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            .big_b{
+                display: flex;
+                justify-content: left;
+                position: absolute;
+                left: 0;
+            }
+            .small_b{
+                display: flex;
+                justify-content: center;
+            }
+            .c_part{
+                display: flex;
+                justify-content: right;
+                position: absolute;
+                right: 0;
+                padding-top: 15px;
+            }
+            .firstRow{
+                height: 200px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            .secondRow{
+                height: 200px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin-top: 8px;
+            }
+            .f1,
+            .f2,
+            .f3{
+                display: inline-flex;
+                background-color: black;
+                height: 180px;
+                width: 180px;
+                margin: 10px;
+                cursor: pointer;
+                border: none;
+                transition: transform 0.5s, width 0.5s, height 0.5s;
+                opacity: 1;
+            }
+            .f1:hover,
+            .f2:hover,
+            .f3:hover{
+                transform: scale(1.1);
+                opacity: 0.5;
+            }
+            .s1,
+            .s2,
+            .s3{
+                display: inline-flex;
+                background-color: black;
+                height: 180px;
+                width: 180px;
+                margin: 10px;
+                cursor: pointer;
+                border: none;
+                transition: transform 0.5s, width 0.5s, height 0.5s;
+                opacity: 1;
+            }
+            .s1:hover,
+            .s2:hover,
+            .s3:hover{
+                transform: scale(1.1);
+                opacity: 0.8;
+            }
+
+        </style>
+    </head>
+    <body>
+        <div class="div0">
+            <div class="name">ASSIGNMENT</div>
+        </div>
+        <div class="div1">
+            <img class="big_b" src="svg/big_b_part.svg">
+            <img class="small_b" src="svg/small_b_part.svg">
+            <img class="c_part" src="svg/c_part.svg">
+        </div>
+        <div class="div2">
+            <div class="firstRow" id="row1">
+                <div class="f1">
+                    <img src="svg/f1.png">
+                </div>
+                <div class="f2">
+                    <img src="svg/f2.png">
+                </div>
+                <div class="f3">
+                    <img src="svg/f3.png">
+                </div>
+            </div>
+            <div class="secondRow" id="row2">
+                <div class="s1">
+                    <img src="svg/s1.png">
+                </div>
+                <div class="s2">
+                    <img src="svg/s2.png">
+                </div>
+                <div class="f1">
+                    <img src="svg/s3.png">
+                </div>
+            </div>
+        </div>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+        <script>
+            gsap.registerPlugin(ScrollTrigger);
+            gsap.to(".big_b", {
+                x: 790,
+                
+                scrollTrigger: {
+                    trigger: ".div1",
+                    start: "top 90%",
+                    end: "top -20%",
+                    scrub: true,
+                    toggleactions: "restart none none none",
+                }
+            })
+            gsap.to(".c_part", {
+                x: -870,
+                
+                scrollTrigger: {
+                    trigger: ".div1",
+                    start: "top 90%",
+                    end: "top -20%",
+                    scrub: true,
+                    toggleactions: "restart none none none",
+                }
+            })
+        </script>
+    </body>
+</html>
